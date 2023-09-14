@@ -3,7 +3,9 @@
 use App\Models\Comment;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,11 @@ Route::post('/posts', [PostController::class, 'store']);
 Route::get('/post/{id}', [PostController::class, 'show']);
 
 Route::post('/post/{id}/comment', [CommentsController::class, 'store']);
+
+Route::get('/register', [RegisterController::class, 'create']);
+
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', [SessionController::class, 'create']);
+
+Route::get('/logout', [SessionController::class, 'destroy']);

@@ -14,7 +14,7 @@
             <a class="text-blue-600 hover:underline" href="/">Wróć</a>
             <div>
                 <a class="flex items-center" href="#">
-                    <h1 class="text-gray-700 font-bold">Autor</h1>
+                    <h1 class="text-gray-700 font-bold">{{ $post->user->name }}</h1>
                 </a>
             </div>
         </div>
