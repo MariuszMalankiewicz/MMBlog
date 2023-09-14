@@ -19,6 +19,8 @@ use App\Http\Controllers\RegisterController;
 */
 
 
+Route::get('/home', [PostController::class, 'index']);
+
 Route::get('/', [PostController::class, 'index']);
 
 Route::get('/posts/create', [PostController::class, 'create']);
@@ -34,5 +36,7 @@ Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/login', [SessionController::class, 'create']);
+
+Route::post('/login', [SessionController::class, 'store']);
 
 Route::get('/logout', [SessionController::class, 'destroy']);
