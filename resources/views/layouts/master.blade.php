@@ -21,7 +21,7 @@
 
         </div>
 
-        <div class="hidden lg:w-1/3 lg:block">
+        <div class="hidden lg:mx-4 lg:text-center lg:w-1/3 lg:block">
 
             @include('layouts.aside')
 
