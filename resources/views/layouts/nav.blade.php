@@ -11,7 +11,11 @@
           <!-- Nav Links -->
           <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
             <li><a class="hover:text-gray-200" href="/">Posty</a></li>
+
+            @if(Auth::check())
             <li><a class="hover:text-gray-200" href="/posts/create">Dodaj post</a></li>
+            @endif
+            
             <li><a class="hover:text-gray-200" href="#">Kontakt</a></li>
           </ul>
           <!-- Header Icons -->
