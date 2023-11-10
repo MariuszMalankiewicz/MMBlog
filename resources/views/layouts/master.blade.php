@@ -13,7 +13,7 @@
 
     @include('layouts.heading')
 
-    <div class="min-h-screen my-6 flex flex-row">
+    <div class="min-h-fit my-6 flex">
 
         <div class="w-full mx-4 lg:2/3">
 
