@@ -1,13 +1,49 @@
-
-<div class="">
+<div>
     <section class="relative mx-auto">
         <!-- navbar -->
       <nav class="flex justify-between bg-gray-900 text-white w-screen">
-        <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-          <a class="text-3xl font-bold font-heading" href="#">
-            <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-            MMBlog
+        <div class="px-5 xl:px-12 py-6 flex w-full items-center relative">
+          <a class="text-3xl font-bold font-heading" href="/">
+            MMBlog<span class="w-2 h-9  ml-0.5 align-middle bg-blue-500 inline-block"><span>
           </a>
+        
+          {{-- mobile nav --}}
+          <svg data-hamburger class="fill-white ml-auto me-10 md:hidden scale-150 cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+
+          
+          <div data-mobileNavContainer class="z-10 hidden md:hidden bg-gray-900 flex flex-col pt-6 items-center px-4 h-44 w-full font-semibold absolute top-20 right-0">
+
+            <ul class="flex justify-end space-x-5 mb-12 me-10 w-full">
+              @if(Auth::check())
+                <p>Witaj {{ Auth::user()->name }}</p>
+                <a href="/logout">Wyloguj</a>
+              @endif
+            
+              @if(!Auth::check())
+                <a href="/register">Zarejestruj</a>
+                <a href="/login">Zaloguj</a>
+              @endif
+          </ul>
+
+            <ul class="flex justify-center space-x-5 w-full">
+              <li><a class="hover:text-gray-200" href="/">Posty</a></li>
+  
+              @if(Auth::check())
+                <li><a class="hover:text-gray-200" href="/posts/create">Dodaj post</a></li>
+              @endif
+              
+              <li><a class="hover:text-gray-200" href="#">Kontakt</a></li>
+  
+            </ul>
+
+
+
+          </div>
+
+
+
+          {{-- desktop nav --}}
+          
           <!-- Nav Links -->
           <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
             <li><a class="hover:text-gray-200" href="/">Posty</a></li>
@@ -18,38 +54,26 @@
             
             <li><a class="hover:text-gray-200" href="#">Kontakt</a></li>
           </ul>
+
           <!-- Header Icons -->
-          <div class="hidden xl:flex items-center space-x-5">
+          <div class="hidden md:flex items-center space-x-5 mx-4">
 
             <!-- Sign In / Register      -->
             @if(Auth::check())
               <p>Witaj {{ Auth::user()->name }}</p>
               <a href="/logout">Wyloguj</a>
             @endif
+            
             @if(!Auth::check())
               <a href="/register">Zarejestruj</a>
               <a href="/login">Zaloguj</a>
             @endif
             
           </div>
+
         </div>
-        <!-- Responsive navbar -->
-        <a class="xl:hidden flex mr-6 items-center" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-          <span class="flex absolute -mt-5 ml-4">
-            <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
-            </span>
-          </span>
-        </a>
-        <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </a>
+
+
       </nav>
-      
     </section>
   </div>
