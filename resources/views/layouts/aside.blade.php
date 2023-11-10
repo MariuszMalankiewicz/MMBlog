@@ -3,12 +3,15 @@
 </div>
 <div>
    <ol class="list-none">
-      @foreach ($archives as $static)
 
-         <li>
-            <a href="/?month={{ $static['month'] }}&year={{ $static['year'] }}" class="text-blue-600 hover:underline">{{ $static['month'] .' '. $static['year'] }}</a>
-         </li>
+      <li class="flex flex-col">
+         <a href="#" class="text-blue-600 hover:underline">2023 Listopad</a>
+         <a href="#" class="text-blue-600 hover:underline">2023 Maj</a>
+         <a href="#" class="text-blue-600 hover:underline">2022 Kwiecień</a>
+         <a href="#" class="text-blue-600 hover:underline">2022 Marzec</a>
+         <a href="#" class="text-blue-600 hover:underline">2021 Styczeń</a>
+      </li>
 
-      @endforeach
+
     </ol>
 </div>
