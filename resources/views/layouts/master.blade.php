@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog</title>
+    <title>MMBlog</title>
+
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 <body class="overflow-x-hidden">
 
@@ -13,7 +15,7 @@
 
     @include('layouts.heading')
 
-    <div class="min-h-fit my-6 flex">
+    <div data-blur class="min-h-fit my-6 flex">
 
         <div class="w-full mx-4 lg:2/3">
 
