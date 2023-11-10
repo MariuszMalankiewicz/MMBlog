@@ -18,13 +18,6 @@ class PostController extends Controller
      */
     public function index()
     {
-
-        // $posts = Post::latest()
-        // ->filter(request(['month', 'year']))
-        // ->get();
-
-
-
         $posts = Post::latest();
 
         if($month = request('month'))
@@ -39,13 +32,7 @@ class PostController extends Controller
 
         $posts = $posts->get();
 
-        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
-        ->groupBy('year', 'month')
-        ->orderByRaw('min(created_at)')
-        ->get()
-        ->toArray();
-
-        return view('posts.index', compact('posts', 'archives'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
