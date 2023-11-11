@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="max-w-4xl my-36 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
+<div class="max-w-4xl my-44 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
 
     <form class="w-full" method="POST" action="/login">
             

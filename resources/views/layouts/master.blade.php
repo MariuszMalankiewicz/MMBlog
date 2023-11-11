@@ -15,9 +15,9 @@
 
     @include('layouts.heading')
 
-    <div data-blur class="min-h-fit my-6 flex">
+    <div data-blur class="my-6 flex">
 
-        <div class="w-full mx-4 lg:2/3">
+        <div class="w-full mx-4 lg:w-2/3">
 
             @yield('content')
 
