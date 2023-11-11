@@ -2,7 +2,8 @@
 
 @section('content')
 
-<div class="max-w-4xl my-44 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
+{{-- my-44 --}}
+<div class="max-w-4xl my-10 h-800:my-20 h-850:my-28 h-900:my-36 h-1050:my-44 h-1250:my-72 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
 
     <form class="w-full" method="POST" action="/login">
             
