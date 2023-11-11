@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="max-w-4xl px-10 my-24 py-6 mx-auto bg-white rounded-lg shadow-md">
+<div class="max-w-4xl my-4 h-850:my-8 h-900:my-16 h-1050:my-24 h-1250:my-52 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
 
     <form class="w-full" method="POST" action="/register">
             
