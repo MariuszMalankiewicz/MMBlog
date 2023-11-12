@@ -1,15 +1,20 @@
+document.querySelector("[data-hamburger]").addEventListener("click", toggleNav);
+document.querySelector("[data-x-mark]").addEventListener("click", toggleNav);
 
-const hamburger = document.querySelector("[data-hamburger]");
-
-
-hamburger.addEventListener("click", openMenu);
-
-
-function openMenu()
+function toggleNav()
 {
     document.querySelector("[data-mobileNavContainer]").classList.toggle("hidden");
     blur();
-    animation();
+    translateFromTopToBottom();
+    changeFromHamburgerToXmark();
+
+}
+
+
+function changeFromHamburgerToXmark() 
+{
+    document.querySelector("[data-hamburger]").classList.toggle("hidden");
+    document.querySelector("[data-x-mark]").classList.toggle("hidden");
 }
 
 function blur()
@@ -17,7 +22,7 @@ function blur()
     document.querySelector("[data-blur]").classList.toggle("blur-sm");
 }
 
-function animation()
+function translateFromTopToBottom()
 {
-    document.querySelector("[data-mobileNavContainer]").classList.toggle("ani");
+    document.querySelector("[data-mobileNavContainer]").classList.toggle("translateFromTopToBottom");
 }

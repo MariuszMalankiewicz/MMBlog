@@ -18,19 +18,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest();
+        $posts = Post::latest()->get();
 
-        if($month = request('month'))
-        {
-            $posts->whereMonth('created_at', Carbon::parse($month));
-        }
-
-        if($year = request('year'))
-        {
-            $posts->whereYear('created_at', $year);
-        }
-
-        $posts = $posts->get();
+        // $posts = $posts->get();
 
         return view('posts.index', compact('posts'));
     }
