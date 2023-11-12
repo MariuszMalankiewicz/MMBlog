@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <div class="max-w-4xl px-10 my-4 py-6 mx-auto">
+<div class="min-h-screen flex flex-col items-center justify-center w-full">
+
+    <div class="max-w-4xl w-full px-10 my-4 py-6 mx-auto">
         <div>
             <span class="font-light text-gray-600">{{ $post->created_at->diffForHumans();  }}</span>
         </div>
@@ -29,6 +31,8 @@
     </div>
 
     @include('comments.index')
+
+</div>
 
 
 @endsection
