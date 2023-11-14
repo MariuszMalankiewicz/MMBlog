@@ -14,7 +14,6 @@
                 </div>
                 <div class="mt-2">
                     <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">{{ $post->title }}</a>
-                    <p class="mt-2 text-gray-600">{{ $post->body }}</p>
                 </div>
                 <div class="flex justify-between items-center mt-4">
                     <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}">Zobacz</a>
