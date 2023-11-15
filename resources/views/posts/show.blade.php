@@ -9,15 +9,13 @@
             <span class="font-light text-gray-600">{{ $post->created_at->diffForHumans();  }}</span>
         </div>
         <div class="mt-2">
-            <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">{{ $post->title }}</a>
+            <h1 class="text-2xl text-gray-700 font-bold hover:text-gray-600">{{ $post->title }}</h1>
             <p class="mt-2 text-gray-600">{{ $post->body }}</p>
         </div>
         <div class="flex justify-between items-center mt-4">
             <a class="text-blue-600 hover:underline" href="/">Wróć</a>
             <div>
-                <a class="flex items-center" href="#">
-                    <h1 class="text-gray-700 font-bold">{{ $post->user->name }}</h1>
-                </a>
+                <h1 class="text-gray-700 font-bold">{{ $post->user->name }}</h1>
             </div>
         </div>
     </div>

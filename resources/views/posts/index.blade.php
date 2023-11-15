@@ -13,18 +13,18 @@
                     <span class="font-light text-gray-600">{{ $post->created_at->diffForHumans(); }}</span>
                 </div>
                 <div class="mt-2">
-                    <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">{{ $post->title }}</a>
+                    <h1 class="text-2xl text-gray-700 font-bold hover:text-gray-600">{{ $post->title }}</h1>
                 </div>
                 <div class="flex justify-between items-center mt-4">
                     <div class="space-x-5">
                         <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}">Zobacz</a>
+                        @if(Auth::check())
                         <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}/edit">Edytuj</a>
                         <a class="text-blue-600 hover:underline" href="/posts/{{$post->id}}">Usuń</a>
+                        @endif
                     </div>
                     <div>
-                        <a class="flex items-center" href="#">
-                            <h1 class="text-gray-700 font-bold">{{ $post->user->name }}</h1>
-                        </a>
+                        <h1 class="text-gray-700 font-bold">{{ $post->user->name }}</h1>
                     </div>
                 </div>
             </div>

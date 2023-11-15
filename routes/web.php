@@ -18,10 +18,9 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-
 Route::get('/home', [PostController::class, 'index']);
 
-
+// POSTS
 
 Route::get('/', [PostController::class, 'index']);
 
@@ -37,21 +36,17 @@ Route::post('/post/{id}', [PostController::class, 'update']);
 
 Route::get('/posts/{id}', [PostController::class, 'destroy']);
 
-
-
-
-
+// COMMENTS
 
 Route::post('/post/{id}/comment', [CommentsController::class, 'store']);
 
-
+// REGISTER
 
 Route::get('/register', [RegisterController::class, 'create']);
 
 Route::post('/register', [RegisterController::class, 'store']);
 
-
-
+// LOGIN
 
 Route::get('/login', [SessionController::class, 'create']);
 
