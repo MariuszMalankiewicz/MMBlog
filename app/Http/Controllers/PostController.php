@@ -77,7 +77,25 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+
+        $this->validate(request(), [
+            'title'  => 'required|min:2',
+            'body'  => 'required|min:2',
+        ]);
+
+        
+        Post::where('id', $request->id)
+            ->update([
+                'title' => $request->title,
+                'body' => $request->body
+            ]);
+        
+        return redirect('/'); 
+       
+
+        
+        
+        // return redirect('/');
     }
 
     /**

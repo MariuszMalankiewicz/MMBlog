@@ -31,6 +31,8 @@ Route::get('/post/{id}', [PostController::class, 'show']);
 
 Route::get('/post/{id}/edit', [PostController::class, 'edit']);
 
+Route::post('/post/{id}', [PostController::class, 'update']);
+
 Route::post('/post/{id}/comment', [CommentsController::class, 'store']);
 
 Route::get('/register', [RegisterController::class, 'create']);

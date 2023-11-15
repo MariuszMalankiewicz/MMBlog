@@ -6,7 +6,7 @@
 
     <div class="max-w-4xl w-full px-10 my-14 py-6 mx-auto bg-white rounded-lg shadow-md">
 
-        <form class="w-full" method="POST" action="/posts">
+        <form class="w-full" method="POST" action="/post/{{$post->id}}">
                 
             @csrf
 
