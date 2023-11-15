@@ -19,6 +19,7 @@
                     <div class="space-x-5">
                         <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}">Zobacz</a>
                         <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}/edit">Edytuj</a>
+                        <a class="text-blue-600 hover:underline" href="/posts/{{$post->id}}">Usuń</a>
                     </div>
                     <div>
                         <a class="flex items-center" href="#">

@@ -56,7 +56,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post, $id)
+    public function show(Post $post, string $id)
     {
         $post = Post::find($id);
 
@@ -83,7 +83,7 @@ class PostController extends Controller
             'body'  => 'required|min:2',
         ]);
 
-        
+
         Post::where('id', $request->id)
             ->update([
                 'title' => $request->title,
@@ -101,8 +101,10 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post, string $id)
     {
-        //
+        Post::find($id)->delete();
+
+        return redirect('/');
     }
 }
