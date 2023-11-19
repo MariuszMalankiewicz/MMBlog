@@ -15,7 +15,7 @@
         <div class="flex justify-between items-center mt-4">
             <a class="text-blue-600 hover:underline" href="/">Wróć</a>
             <div>
-                <h1 class="text-gray-700 font-bold">{{ $post->user->name }}</h1>
+                <h1 class="text-gray-700 font-bold text-sm">{{ $post->user->name }}</h1>
             </div>
         </div>
     </div>

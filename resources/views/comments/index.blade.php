@@ -12,7 +12,8 @@
                     <a class="text-blue-600 hover:underline" href="/comment/{{ $comment->id }}">Usuń</a>
                 </div>
             @endcan
-            
+
+            <p class="text-end font-bold text-sm">{{ $comment->user->name }}</p>
             
         </div>
     </div> 
