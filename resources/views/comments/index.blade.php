@@ -5,7 +5,7 @@
         </div>
         <div class="mt-2">
             <p class="mt-2 text-gray-600">{{ $comment->body }}</p>
-
+            
             @can('auth_user_id_comment_user_id', $comment) 
                 <div class=" flex items-center justify-end space-x-5">
                     <a class="text-blue-600 hover:underline" href="/comments/{{ $comment->id }}/edit">Edytuj</a>
@@ -13,7 +13,7 @@
                 </div>
             @endcan
 
-            <p class="text-end font-bold text-sm">{{ $comment->user->name }}</p>
+            <p class="mt-4 text-end font-bold text-sm">{{ $comment->user->name }}</p>
             
         </div>
     </div> 

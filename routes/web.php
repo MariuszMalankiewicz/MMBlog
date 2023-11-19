@@ -59,3 +59,10 @@ Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
 
 Route::get('/logout', [SessionController::class, 'destroy']);
+
+// managment posts
+
+Route::get('/managment/posts', [ManagmentPostController::class, 'index']);
+
+
+
