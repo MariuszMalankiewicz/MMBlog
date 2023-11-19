@@ -20,4 +20,21 @@ class CommentsController extends Controller
 
         return back();
     }
+
+    public function edit(string $id)
+    {
+        $comment = Comment::findOrFail($id);
+
+        return view('comments.edit', compact('comment'));
+    } 
+
+    public function update(string $id)
+    {
+        Comment::where('id', $id)->update([
+            'body' => request('body'),
+        ]);
+
+        return redirect('/');
+    }
+
 }
