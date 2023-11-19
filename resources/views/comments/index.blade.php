@@ -5,12 +5,14 @@
         </div>
         <div class="mt-2">
             <p class="mt-2 text-gray-600">{{ $comment->body }}</p>
-            @if(Auth::check())
-            <div class=" flex items-center justify-end space-x-5">
-                <a class="text-blue-600 hover:underline" href="/comments/{{ $comment->id }}/edit">Edytuj</a>
-                <a class="text-blue-600 hover:underline" href="/comment/{{ $comment->id }}">Usuń</a>
-            </div>
-            @endif
+
+            @can('auth_user_id_comment_user_id', $comment) 
+                <div class=" flex items-center justify-end space-x-5">
+                    <a class="text-blue-600 hover:underline" href="/comments/{{ $comment->id }}/edit">Edytuj</a>
+                    <a class="text-blue-600 hover:underline" href="/comment/{{ $comment->id }}">Usuń</a>
+                </div>
+            @endcan
+            
             
         </div>
     </div> 

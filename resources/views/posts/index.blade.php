@@ -18,10 +18,12 @@
                 <div class="flex justify-between items-center mt-4">
                     <div class="space-x-5">
                         <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}">Zobacz</a>
-                        @if(Auth::check())
-                        <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}/edit">Edytuj</a>
-                        <a class="text-blue-600 hover:underline" href="/posts/{{$post->id}}">Usuń</a>
-                        @endif
+
+                        @can('auth_user_id_post_user_id', $post)
+                            <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}/edit">Edytuj</a>
+                            <a class="text-blue-600 hover:underline" href="/posts/{{$post->id}}">Usuń</a>
+                        @endcan
+                        
                     </div>
                     <div>
                         <h1 class="text-gray-700 font-bold">{{ $post->user->name }}</h1>
