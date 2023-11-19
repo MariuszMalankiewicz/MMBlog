@@ -21,8 +21,10 @@
     </div>
 
     <hr class="my-10">
-
-    @include('comments.create')
+    @if (Auth::check())
+        @include('comments.create')    
+    @endif
+    
 
     <div>
         <h1 class="text-center text-gray-700 font-bold">Komentarze</h1>
