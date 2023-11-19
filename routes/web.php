@@ -44,6 +44,8 @@ Route::get('/comments/{id}/edit', [CommentsController::class, 'edit']);
 
 Route::post('/comments/{id}', [CommentsController::class, 'update']);
 
+Route::get('/comment/{id}', [CommentsController::class, 'destroy']);
+
 // REGISTER
 
 Route::get('/register', [RegisterController::class, 'create']);

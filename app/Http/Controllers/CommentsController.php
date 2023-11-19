@@ -37,4 +37,10 @@ class CommentsController extends Controller
         return redirect('/');
     }
 
+    public function destroy(string $id)
+    {
+        Comment::where('id', $id)->delete();
+
+        return redirect('/');
+    }
 }
