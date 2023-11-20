@@ -17,7 +17,7 @@
 
     <div data-blur class="my-6 flex">
 
-        <div class="w-full mx-4">
+        <div class="w-full">
 
             @yield('content')
 
