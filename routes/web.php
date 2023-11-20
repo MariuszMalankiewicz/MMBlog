@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ManagmentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +63,7 @@ Route::get('/logout', [SessionController::class, 'destroy']);
 
 // managment posts
 
-Route::get('/managment/posts', [ManagmentPostController::class, 'index']);
+Route::get('/managments', [ManagmentsController::class, 'index']);
 
 
 

@@ -32,7 +32,7 @@
   
               @if(Auth::check())
 
-                <a class="hover:text-gray-200" href="#">Panel administracyjny</a>
+                <a class="hover:text-gray-200" href="/managments">Panel administracyjny</a>
               @endif
   
             </ul>
@@ -50,7 +50,7 @@
 
               @if(Auth::check())
 
-                <a class="hover:text-gray-200" href="#">Panel administracyjny</a>
+                <a class="hover:text-gray-200" href="/managments">Panel administracyjny</a>
 
               @endif
 

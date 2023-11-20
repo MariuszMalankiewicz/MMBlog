@@ -7,7 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-  
+      borderWidth: {
+        '18': '18px',
+
+      }
     },
   },
   plugins: [],
