@@ -2,15 +2,15 @@
 
 @section('content')
 
-<div class="min-h-screen w-full flex items-center justify-center">
-    <div class="max-w-4xl w-full my-10 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
+<div class="w-full flex items-center justify-center px-4 sm:px-6">
+    <div class="w-full max-w-3xl my-10 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
 
         <form class="w-full" method="POST" action="/login">
                 
             @csrf
 
                 <div class="mb-4 text-center">
-                    <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-600 md:text-4xl lg:text-5xl dark:text-blue-600">Zaloguj się</h1>
+                    <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-600 md:text-4xl lg:text-5xl">Zaloguj się</h1>
                 </div>
 
                 <div class="mb-4">
@@ -28,11 +28,11 @@
                 </div>
 
 
-                <div class="mb-4">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                <div class="mb-4 space-x-4">
+                    <button class="text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                         Zaloguj się
                     </button>
-                    <a href="/" class="ml-4 text-gray-700">Powrót</a>
+                    <a href="/" class="text-sm text-blue-500 hover:underline">Powrót</a>
                 </div>
 
                 @include('layouts.errors')

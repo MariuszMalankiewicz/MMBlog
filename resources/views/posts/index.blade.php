@@ -29,7 +29,7 @@
               @foreach ($posts as $post)
                       <tbody>
                         @can('auth_user_id_post_user_id', $post) 
-                          <tr class="bg-white hover:bg-blue-100 duration-200">
+                          <tr class="bg-white hover:bg-slate-100 duration-200">
                             <td class="px-5 py-5 text-sm font-bold">{{ $post->id }}</td>
                             <td class="px-5 py-5 text-sm font-semibold">{{ $post->title }}</td>
                             <td class="px-5 py-5 text-sm">{{ $post->created_at }}</td>

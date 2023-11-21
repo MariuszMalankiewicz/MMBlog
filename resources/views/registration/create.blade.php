@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="min-h-screen w-full flex items-center justify-center">
+<div class="w-full flex items-center justify-center px-4 sm:px-6 sm:my-6 md:my-8 lg:my-12">
 
     <div class="max-w-4xl w-full my-4 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
 
@@ -43,11 +43,11 @@
                     <input type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="password_confirmation" required>
                 </div>
 
-                <div class="mb-4">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                <div class="mb-4 space-x-4">
+                    <button class="text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                         Zarejestruj się
                     </button>
-                    <a href="/" class="ml-4 text-gray-700">Powrót</a>
+                    <a href="/" class="text-sm text-blue-600 hover:underline">Powrót</a>
                 </div>
 
                 @include('layouts.errors')

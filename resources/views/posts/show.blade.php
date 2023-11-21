@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="min-h-screen flex flex-col items-center justify-center w-full">
+<div class="flex flex-col items-center justify-center w-full">
 
     <div class="max-w-4xl w-full px-10 my-10 py-6 mx-auto">
         <div>

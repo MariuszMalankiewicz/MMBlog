@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="min-h-screen flex flex-col items-center justify-center w-full">
+    <div class="flex flex-col items-center justify-center w-full px-6">
 
         @foreach ($posts as $post)
 

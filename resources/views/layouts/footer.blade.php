@@ -2,7 +2,7 @@
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="flex items-center justify-between">
 
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MMBlog</span>
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MMBlog<span class="w-1.5 h-8 ml-0.5 align-middle bg-blue-500 inline-block"></span></span>
 
             <ul class="flex flex-wrap items-center text-sm font-medium text-gray-500 mb-0 dark:text-gray-400">
                 <li>
