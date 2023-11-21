@@ -4,7 +4,7 @@
 
 <div class="min-h-screen flex flex-col items-center justify-center w-full">
 
-    <div class="max-w-4xl w-full px-10 my-4 py-6 mx-auto">
+    <div class="max-w-4xl w-full px-10 my-10 py-6 mx-auto">
         <div>
             <span class="font-light text-gray-600">{{ $post->created_at->diffForHumans();  }}</span>
         </div>
@@ -12,17 +12,22 @@
             <h1 class="text-2xl text-gray-700 font-bold hover:text-gray-600">{{ $post->title }}</h1>
             <p class="mt-2 text-gray-600">{{ $post->body }}</p>
         </div>
-        <div class="flex justify-between items-center mt-4">
-            <a class="text-blue-600 hover:underline" href="/">Wróć</a>
-            <div>
-                <h1 class="text-gray-700 font-bold text-sm">{{ $post->user->name }}</h1>
+        <hr class="my-10">
+        <div class="flex justify-start items-center">
+            <div class="space-x-2">
+                <span class="text-sm text-gray-500">Przejdz do:</span>
+                <a class="text-sm text-blue-600 hover:underline" href="/">Strona główna</a>
+                @can('auth_user_id_post_user_id', $post) 
+                    <span class="text-sm text-gray-500">|</span>
+                    <a class="text-sm text-blue-600 hover:underline" href="/posts">Zarządzaj postami</a>
+                @endcan
             </div>
         </div>
     </div>
 
-    <hr class="my-10">
+    <hr>
     @if (Auth::check())
-        @include('comments.create')    
+        @include('comments.create')
     @endif
     
 

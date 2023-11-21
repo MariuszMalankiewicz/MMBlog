@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Comment;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CommentsController;
@@ -19,23 +19,23 @@ use App\Http\Controllers\ManagmentsController;
 |
 */
 
-Route::get('/home', [PostController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 
 // POSTS
 
 Route::get('/posts', [PostController::class, 'index']);
 
-// Route::get('/posts/create', [PostController::class, 'create']);
+Route::get('/posts/create', [PostController::class, 'create']);
 
-// Route::post('/posts', [PostController::class, 'store']);
+Route::post('/posts', [PostController::class, 'store']);
 
-// Route::get('/post/{id}', [PostController::class, 'show']);
+Route::get('/post/{id}', [PostController::class, 'show']);
 
-// Route::get('/post/{id}/edit', [PostController::class, 'edit']);
+Route::get('/post/{id}/edit', [PostController::class, 'edit']);
 
-// Route::post('/post/{id}', [PostController::class, 'update']);
+Route::post('/post/{id}', [PostController::class, 'update']);
 
-// Route::get('/posts/{id}', [PostController::class, 'destroy']);
+Route::get('/posts/{id}', [PostController::class, 'destroy']);
 
 // COMMENTS
 

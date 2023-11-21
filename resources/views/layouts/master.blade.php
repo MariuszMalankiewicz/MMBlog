@@ -10,28 +10,26 @@
     @vite('resources/js/app.js')
 </head>
 <body class="overflow-x-hidden">
+    <div class="flex flex-col justify-between min-h-screen">
+        <div>
+            @include('layouts.nav')
 
-    @include('layouts.nav')
+        @include('layouts.heading')
+        </div>
 
-    @include('layouts.heading')
+        <div data-blur class="my-6 flex">
 
-    <div data-blur class="my-6 flex">
+            <div class="w-full">
 
-        <div class="w-full">
+                @yield('content')
 
-            @yield('content')
+            </div>
 
         </div>
 
-        {{-- <div class="hidden lg:mx-4 lg:text-center lg:w-1/3 lg:block">
-
-            @include('layouts.aside')
-
-        </div> --}}
+        @include('layouts.footer')
 
     </div>
-
-    @include('layouts.footer')
 
 </body>
 </html>

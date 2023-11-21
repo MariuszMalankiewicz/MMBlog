@@ -48,7 +48,7 @@ class PostController extends Controller
             
         ]);
         
-        return redirect('/');
+        return redirect('/posts');
     }
 
     /**
@@ -88,7 +88,7 @@ class PostController extends Controller
                 'body' => $request->body
             ]);
         
-        return redirect('/'); 
+        return redirect('/posts'); 
     }
 
     /**
@@ -98,6 +98,6 @@ class PostController extends Controller
     {
         Post::find($id)->delete();
 
-        return redirect('/');
+        return redirect('/posts');
     }
 }

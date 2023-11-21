@@ -48,11 +48,11 @@
 
               <a class="hover:text-gray-200" href="/">Strona główna</a>
 
-              @if(Auth::check())
+              @can('admin')
 
                 <a class="hover:text-gray-200" href="/managments">Panel administracyjny</a>
 
-              @endif
+              @endcan
 
             </div>
 
