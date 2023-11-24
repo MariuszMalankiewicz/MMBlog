@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\RegisterController;
@@ -63,7 +64,11 @@ Route::get('/logout', [SessionController::class, 'destroy']);
 
 // managment posts
 
+// Route::get('/managments', [ManagmentsController::class, 'index'])->middleware('can:isAdmin');
 Route::get('/managments', [ManagmentsController::class, 'index']);
 
+// users
 
+Route::get('/users', [UsersController::class, 'index']);
 
+Route::get('/users/{id}', [UsersController::class, 'show']);

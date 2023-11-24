@@ -30,7 +30,7 @@
 
               <a class="hover:text-gray-200" href="/">Strona główna</a>
   
-              @if(Auth::check())
+              @if(Auth::check() && Auth::user()->role === 'admin' || Auth::check() && Auth::user()->role === 'superAdmin')
 
                 <a class="hover:text-gray-200" href="/managments">Panel administracyjny</a>
               @endif
@@ -48,11 +48,9 @@
 
               <a class="hover:text-gray-200" href="/">Strona główna</a>
 
-              @can('admin')
-
+              @if(Auth::check() && Auth::user()->role === 'admin' || Auth::check() && Auth::user()->role === 'superAdmin')
                 <a class="hover:text-gray-200" href="/managments">Panel administracyjny</a>
-
-              @endcan
+              @endif
 
             </div>
 

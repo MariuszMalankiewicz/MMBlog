@@ -13,21 +13,14 @@
             <p class="mt-2 text-gray-600">{{ $post->body }}</p>
         </div>
         <hr class="my-10">
-        <div class="flex justify-start items-center">
-            <div class="space-x-2">
-                <span class="text-sm text-gray-500">Przejdz do:</span>
-                <a class="text-sm text-blue-600 hover:underline" href="/">Strona główna</a>
-                @can('auth_user_id_post_user_id', $post) 
-                    <span class="text-sm text-gray-500">|</span>
-                    <a class="text-sm text-blue-600 hover:underline" href="/posts">Zarządzaj postami</a>
-                @endcan
-            </div>
-        </div>
+
     </div>
 
     <hr>
     @if (Auth::check())
-        @include('comments.create')
+        <div class="w-full px-4 sm:px-6">
+            @include('comments.create')
+        </div>
     @endif
     
 

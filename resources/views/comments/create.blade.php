@@ -1,4 +1,4 @@
-<div class="max-w-4xl w-full px-10 my-4 py-6 mt-20 mx-auto border rounded-lg">
+<div class="max-w-4xl w-full px-10 my-4 py-6 mx-auto border rounded-lg">
 
     <form class="w-full" method="POST" action="/post/{{ $post->id }}/comment">
         @csrf
