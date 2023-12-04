@@ -3,15 +3,15 @@
         <div class="flex items-center justify-between">
 
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MMBlog<span class="w-1.5 h-8 ml-0.5 align-middle bg-blue-500 inline-block"></span></span>
-            <div class="space-x-2">
-                <span class="text-sm text-gray-500">Przejdz do:</span>
-                <a class="text-sm text-white hover:underline" href="/">Strona główna</a>
+            <div class="space-x-2 hidden sm:flex sm:px-2">
+                <span class="text-xs md:text-sm text-gray-500">Przejdz do:</span>
+                <a class="text-xs md:text-sm text-white hover:underline" href="/">Strona główna</a>
                 @if(Auth::check() && Auth::user()->role === 'admin' || Auth::check() && Auth::user()->role === 'superAdmin') 
-                    <span class="text-sm text-gray-500">|</span>
-                    <a class="text-sm text-white hover:underline" href="/posts">Zarządzaj postami</a>
+                    <span class="text-xs md:text-sm text-gray-500">|</span>
+                    <a class="text-xs md:text-sm text-white hover:underline" href="/posts">Zarządzaj postami</a>
                     @if(Auth::check() && Auth::user()->role === 'superAdmin')
-                        <span class="text-sm text-gray-500">|</span>
-                        <a class="text-sm text-white hover:underline" href="/users">Zarządzaj użytkownikami</a>
+                        <span class="text-xs md:text-sm text-gray-500">|</span>
+                        <a class="text-xs md:text-sm text-white hover:underline" href="/users">Zarządzaj użytkownikami</a>
                     @endif
                 @endif
             </div>

@@ -2,16 +2,17 @@
 
 @section('content')
 
-<div class="w-full flex items-center justify-center px-4 sm:px-6">
-    <div class="w-full max-w-3xl my-10 px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
+<div class="w-full flex flex-col px-4 sm:px-6 lg:px-12 py-4 sm:py-6 md:py-12">
+
+    <h1 class="sm:text-start lg:text-center text-3xl font-semibold text-gray-700">Zaloguj się do konta</h1>
+
+    <hr class="my-10 w-full"> 
+
+    <div class="max-w-4xl lg:mx-auto w-full bg-white">
 
         <form class="w-full" method="POST" action="/login">
                 
             @csrf
-
-                <div class="mb-4 text-center">
-                    <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-600 md:text-4xl lg:text-5xl">Zaloguj się</h1>
-                </div>
 
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
