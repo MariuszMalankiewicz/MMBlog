@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
-
-
 @section('content')
     <div class="w-full flex flex-col items-center justify-center my-4">
 
@@ -16,11 +14,13 @@
 
         <h1 class="text-center text-4xl md:text-6xl font-black text-gray-800">Zarządzaj Użytkownikami</h1>
 
-        <a href="/users/create" class="flex items-center min-w-max space-x-2 px-8 py-4 shadow-2xl rotate-1 hover:rotate-2 rounded-md bg-slate-10 text-gray-600 hover:text-gray-800 border-b-4 hover:border-blue-500 duration-200">
+        <a href="{{ route('users.create') }}" class="flex items-center min-w-max space-x-2 px-8 py-4 shadow-2xl rotate-1 hover:rotate-2 rounded-md bg-slate-10 text-gray-600 hover:text-gray-800 border-b-4 hover:border-blue-500 duration-200">
           <p class="text-xl md:text-2xl font-bold">Dodaj Użytkownika</p>
           <svg class="fill-blue-600 text-2xl md:text-3xl" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
         </a>
       </div>
+
+      @include('layouts.sessions.success')
 
       <div class="w-full text-center overflow-x-auto sm:mb-12 whitespace-nowrap lg:px-5 xl:px-10">
         <table class="w-full">
@@ -44,10 +44,16 @@
                     <td class="px-5 py-5 text-sm font-semibold"><span class="bg-blue-300 py-1 px-2 rounded-md text-white">{{ $user->role }}</span></td>
                     <td class="px-5 py-5 text-sm">{{ $user->created_at }}</td>
                     <td class="px-5 py-5 text-sm">{{ $user->updated_at }}</td>
-                    <td class="text-center space-x-5 pe-5">
-                        <a href="/users/{{ $user->id }}" class="text-sm font-semibold text-blue-600 hover:underline">Podgląd</a>
-                        <a href="/user/{{ $user->id }}/edit" class="text-sm font-semibold text-blue-600 hover:underline">Edytuj</a>
-                        <a href="/users/{{ $user->id }}" class="text-sm font-semibold text-blue-600 hover:underline">Usuń</a>
+                    <td class="text-center">
+                      <form class=" space-x-5 pe-5" method="POST" action="{{ route('users.destroy', ['user' => $user->id]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <a href="{{ route('users.show', ['user' => $user->id]) }}" class="text-sm font-semibold text-blue-600 hover:underline">Podgląd</a>
+                        <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="text-sm font-semibold text-blue-600 hover:underline">Edytuj</a>
+                        <button class="text-sm font-semibold text-blue-600 hover:underline" type="submit">Usuń</button>
+                      </form>
+                        
+                        
                     </td>
                     </tr>
                 </tbody>
