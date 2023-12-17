@@ -1,6 +1,6 @@
 <div class="max-w-4xl w-full px-10 my-4 py-6 mx-auto border rounded-lg">
 
-    <form class="w-full" method="POST" action="/post/{{ $post->id }}/comment">
+    <form class="w-full" method="POST" action="/posts/{{ $post->id }}/comments">
         @csrf
 
             <input type="hidden" name="post_id" value="{{ $post->id }}">

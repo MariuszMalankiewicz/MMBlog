@@ -7,11 +7,14 @@
           <div class="mt-2">
               <p class="mt-2 text-gray-600">{{ $comment->body }}</p>
               
+
               @can('auth_user_id_comment_user_id', $comment) 
-                  <div class=" flex items-center justify-end space-x-5">
-                      <a class="text-blue-600 hover:underline" href="/comments/{{ $comment->id }}/edit">Edytuj</a>
-                      <a class="text-blue-600 hover:underline" href="/comment/{{ $comment->id }}">Usuń</a>
-                  </div>
+                    <form class="flex items-center justify-end space-x-5" action="{{ route('posts.comments.destroy',['post' => $post->id, 'comment' => $comment->id]) }}" method="POST">
+                        <a class="text-blue-600 hover:underline" href="{{  route('posts.comments.edit', ['post' => $post->id ,'comment' => $comment->id] ) }}">Edytuj</a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-blue-600 hover:underline">Usuń</button>
+                    </form>
               @endcan
 
               <p class="mt-4 text-end font-bold text-sm">{{ $comment->user->name }}</p>

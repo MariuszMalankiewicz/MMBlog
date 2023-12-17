@@ -1,16 +1,15 @@
-
 @extends('layouts.master')
 
 @section('content')
 
-<div class="min-h-screen flex items-center justify-center w-full">
+<div class="flex items-center justify-center w-full">
 
     <div class="max-w-4xl w-full px-10 my-4 py-6 mt-20 mx-auto border rounded-lg">
 
-        <form class="w-full" method="POST" action="/comments/{{ $comment->id }}">
+
+        <form class="w-full" action="{{ route('posts.comments.update', ['comment' => $comment->id, 'post' => $post->id]) }}" method="POST">
             @csrf
-    
-                <input type="hidden" name="post_id" value="{{ $comment->id }}">
+            @method('PUT')
     
                 <div class="mb-4 text-center">
                     <h1 class="text-center text-gray-700 font-bold">Edytuj komentarz</h1>
@@ -33,7 +32,7 @@
     
                 @include('layouts.errors')
               
-          </form>
+        </form>
     
     </div>
 
