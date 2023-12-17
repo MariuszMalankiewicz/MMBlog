@@ -12,9 +12,7 @@ class ManagmentsController extends Controller
      */
     public function index()
     {
-        $users = User::get();
-
-        return view('managments.index', compact('users'));
+        return view('managments.index');
     }
 
     /**

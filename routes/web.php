@@ -25,8 +25,7 @@ Route::resource('/posts', PostController::class);
 Route::resource('posts.comments', CommentsController::class)->except('index', 'show', 'create');
 Route::resource('register', RegisterController::class)->only('create', 'store');
 Route::resource('login', SessionController::class)->only('create', 'store', 'destroy');
-
-Route::get('/managments', [ManagmentsController::class, 'index']);
+Route::resource('managments', ManagmentsController::class)->only('index');
 
 Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/{id}', [UsersController::class, 'show']);
