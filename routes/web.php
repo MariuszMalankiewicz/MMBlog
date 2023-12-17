@@ -20,8 +20,7 @@ use App\Http\Controllers\ManagmentsController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-
+Route::resource('/', HomeController::class)->only('index');
 Route::resource('/posts', PostController::class);
 Route::resource('posts.comments', CommentsController::class)->except('index', 'show', 'create');
 Route::resource('register', RegisterController::class)->only('create', 'store');
