@@ -6,10 +6,10 @@
 
     <div class="max-w-3xl w-full px-10 my-14 py-6 mx-auto bg-white rounded-lg shadow-md">
 
-        <form class="w-full" method="POST" action="/post/{{$post->id}}">
-                
+        <form class="w-full" method="POST" action="{{ route('posts.update', ['post' => $post->id]) }}">
+            
             @csrf
-
+            @method('PUT')
                 <div class="mb-4 text-center">
                     <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-600 md:text-4xl lg:text-5xl dark:text-blue-600">Edytuj post</h1>
                 </div>

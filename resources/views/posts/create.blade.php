@@ -6,7 +6,7 @@
 
     <div class="max-w-3xl w-full px-10 my-14 py-6 mx-auto bg-white rounded-lg shadow-md">
 
-        <form class="w-full" method="POST" action="/posts">
+        <form class="w-full" method="POST" action="{{ route('posts.store') }}">
                 
             @csrf
 

@@ -24,19 +24,11 @@ Route::get('/', [HomeController::class, 'index']);
 
 // POSTS
 
-Route::get('/posts', [PostController::class, 'index']);
+// Route::post('/post/{id}', [PostController::class, 'update']);
 
-Route::get('/posts/create', [PostController::class, 'create']);
+// Route::get('/posts/{id}', [PostController::class, 'destroy']);
 
-Route::post('/posts', [PostController::class, 'store']);
-
-Route::get('/post/{id}', [PostController::class, 'show']);
-
-Route::get('/post/{id}/edit', [PostController::class, 'edit']);
-
-Route::post('/post/{id}', [PostController::class, 'update']);
-
-Route::get('/posts/{id}', [PostController::class, 'destroy']);
+Route::resource('posts', PostController::class);
 
 // COMMENTS
 

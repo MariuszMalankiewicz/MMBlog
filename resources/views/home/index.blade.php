@@ -16,7 +16,7 @@
                 </div>
                 <div class="flex justify-between items-center mt-4">
                     <div class="space-x-5">
-                        <a class="text-blue-600 hover:underline" href="/post/{{$post->id}}">Zobacz</a>
+                        <a class="text-blue-600 hover:underline" href="/posts/{{$post->id}}">Zobacz</a>
                     </div>
                     <div>
                         <h1 class="text-gray-700 font-bold">{{ $post->user->name }}</h1>

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 
 class PostController extends Controller
 {
@@ -35,70 +35,50 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+    public function store(StorePostRequest $request)
     {
-        $this->validate(request(), [
-            'title'  => 'required|min:2',
-            'body'  => 'required|min:2',
+        Post::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'user_id' => auth()->id()       
         ]);
 
-        Post::create([
-            'title' => request('title'),
-            'body' => request('body'),
-            'user_id' => auth()->id()
-            
-        ]);
-        
-        return redirect('/posts');
+        return redirect()->route('posts.index')->with('success', 'Post został pomyślnie dodany');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $post, string $id)
+    public function show(Post $post)
     {
-        $post = Post::find($id);
-
         return view('posts.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
-        $post = Post::findOrFail($id);
         return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
-    {
+    public function update(UpdatePostRequest $request, Post $post)
+    {        
+        $post->update($request->all());
 
-        $this->validate(request(), [
-            'title'  => 'required|min:2',
-            'body'  => 'required|min:2',
-        ]);
-
-
-        Post::where('id', $request->id)
-            ->update([
-                'title' => $request->title,
-                'body' => $request->body
-            ]);
-        
-        return redirect('/posts'); 
+        return redirect()->route('posts.index')->with('success', 'Post został zaktualizowany'); 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post, string $id)
+    public function destroy(Post $post)
     {
-        Post::find($id)->delete();
-
-        return redirect('/posts');
+        $post->delete();
+        
+        return back()->with('success', 'Post został usunięty'); 
     }
 }

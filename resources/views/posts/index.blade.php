@@ -18,11 +18,13 @@
 
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800">Zarządzaj Postami</h1>
 
-        <a href="/posts/create" class="flex items-center min-w-max space-x-2 px-8 py-4 shadow-2xl rotate-1 hover:rotate-2 rounded-md bg-slate-10 text-gray-600 hover:text-gray-800 border-b-4 hover:border-blue-500 duration-200">
+        <a href="{{ route('posts.create') }}" class="flex items-center min-w-max space-x-2 px-8 py-4 shadow-2xl rotate-1 hover:rotate-2 rounded-md bg-slate-10 text-gray-600 hover:text-gray-800 border-b-4 hover:border-blue-500 duration-200">
           <p class="text-xl md:text-2xl font-bold">Dodaj Post</p>
           <svg class="fill-blue-600 text-2xl md:text-3xl" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
         </a>
       </div>
+
+      @include('layouts/sessions/success')
 
       <div class="w-full text-center overflow-x-auto sm:mb-12 whitespace-nowrap">
         <table class="w-full">
@@ -43,10 +45,14 @@
                             <td class="px-5 py-5 text-sm font-semibold">{{ $post->title }}</td>
                             <td class="px-5 py-5 text-sm">{{ $post->created_at }}</td>
                             <td class="px-5 py-5 text-sm">{{ $post->updated_at }}</td>
-                            <td class="text-center space-x-5 pe-5">
-                              <a href="/post/{{ $post->id }}" class="text-sm font-semibold text-blue-600 hover:underline">Podgląd</a>
-                              <a href="/post/{{ $post->id }}/edit" class="text-sm font-semibold text-blue-600 hover:underline">Edytuj</a>
-                              <a href="/posts/{{ $post->id }}" class="text-sm font-semibold text-blue-600 hover:underline">Usuń</a>
+                            <td>
+                              <form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="POST" class="text-center space-x-5 pe-5">
+                                <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="text-sm font-semibold text-blue-600 hover:underline">Podgląd</a>
+                                <a href="{{ route('posts.edit', ['post' => $post->id]) }}" class="text-sm font-semibold text-blue-600 hover:underline">Edytuj</a>
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="cursor-pointer text-sm font-semibold text-blue-600 hover:underline">Usuń</button>
+                              </form>
                             </td>
                           </tr>
                         @endcan 

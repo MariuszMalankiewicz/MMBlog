@@ -17,6 +17,9 @@
     </div>
 
     <hr>
+    
+    @include('layouts/sessions/success')
+    
     @if (Auth::check())
         <div class="w-full px-4 sm:px-6">
             @include('comments.create')
