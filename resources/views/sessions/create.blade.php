@@ -10,7 +10,7 @@
 
     <div class="max-w-4xl lg:mx-auto w-full bg-white">
 
-        <form class="w-full" method="POST" action="/login">
+        <form class="w-full" method="POST" action="{{ route('login.store') }}">
                 
             @csrf
 

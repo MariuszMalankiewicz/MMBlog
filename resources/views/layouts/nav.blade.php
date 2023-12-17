@@ -17,12 +17,16 @@
             <ul class="flex justify-end space-x-5 mb-12 me-10 w-full">
               @if(Auth::check())
                 <p>Witaj {{ Auth::user()->name }}</p>
-                <a href="/logout">Wyloguj</a>
+                {{-- <form method="POST" action="{{ route('login.destroy', ['login' => Auth::user()->id]) }}">
+                  @csrf
+                  @method('DELETE')
+                  <button class="text-white hover:underline" type="submit">Wyloguj</button>
+                </form> --}}
               @endif
             
               @if(!Auth::check())
                 <a href="{{ route('register.create') }}">Zarejestruj</a>
-                <a href="/login">Zaloguj</a>
+                <a href="{{ route('login.create') }}">Zaloguj</a>
               @endif
           </ul>
 
@@ -60,8 +64,11 @@
             @if(Auth::check())
 
               <p>Witaj {{ Auth::user()->name }}</p>
-
-              <a href="/logout">Wyloguj</a>
+              <form method="POST" action="{{ route('login.destroy', ['login' => Auth::user()->id]) }}">
+                @csrf
+                @method('DELETE')
+                <button class="text-white hover:underline" type="submit">Wyloguj</button>
+              </form>
 
             @endif
             
@@ -69,7 +76,7 @@
 
               <a href="{{ route('register.create') }}">Zarejestruj</a>
 
-              <a href="/login">Zaloguj</a>
+              <a href="{{ route('login.create') }}">Zaloguj</a>
               
             @endif
             

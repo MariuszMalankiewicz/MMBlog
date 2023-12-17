@@ -25,22 +25,9 @@ Route::get('/', [HomeController::class, 'index']);
 Route::resource('/posts', PostController::class);
 Route::resource('posts.comments', CommentsController::class)->except('index', 'show', 'create');
 Route::resource('register', RegisterController::class)->only('create', 'store');
+Route::resource('login', SessionController::class)->only('create', 'store', 'destroy');
 
-// LOGIN
-
-Route::get('/login', [SessionController::class, 'create']);
-
-Route::post('/login', [SessionController::class, 'store']);
-
-Route::get('/logout', [SessionController::class, 'destroy']);
-
-// managment posts
-
-// Route::get('/managments', [ManagmentsController::class, 'index'])->middleware('can:isAdmin');
 Route::get('/managments', [ManagmentsController::class, 'index']);
 
-// users
-
 Route::get('/users', [UsersController::class, 'index']);
-
 Route::get('/users/{id}', [UsersController::class, 'show']);

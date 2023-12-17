@@ -25,13 +25,13 @@ class SessionController extends Controller
             ]);
         }
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Jesteś zalogowany');
     }
 
     public function destroy()
     {
         auth()->logout();
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Zostałeś wylogowany');
     }
 }
