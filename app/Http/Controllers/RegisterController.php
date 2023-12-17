@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreUserRequest;
 
 class RegisterController extends Controller
 {
@@ -12,24 +13,17 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-
     public function create()
     {
         return view('registration.create');
     }
 
-    public function store()
+    public function store(StoreUserRequest $request)
     {
-        $this->validate(request(),[
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed'
-        ]);
-
-        $user = User::create(request(['name', 'email', 'password']));
+        $user = User::create($request->all());
 
         auth()->login($user);
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Konto zostało założone');
     }
 }

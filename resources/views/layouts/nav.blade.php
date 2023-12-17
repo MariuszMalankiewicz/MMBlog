@@ -21,7 +21,7 @@
               @endif
             
               @if(!Auth::check())
-                <a href="/register">Zarejestruj</a>
+                <a href="{{ route('register.create') }}">Zarejestruj</a>
                 <a href="/login">Zaloguj</a>
               @endif
           </ul>
@@ -67,7 +67,7 @@
             
             @if(!Auth::check())
 
-              <a href="/register">Zarejestruj</a>
+              <a href="{{ route('register.create') }}">Zarejestruj</a>
 
               <a href="/login">Zaloguj</a>
               

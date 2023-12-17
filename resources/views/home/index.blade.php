@@ -4,7 +4,8 @@
 
     <div class="flex flex-col items-center justify-center w-full px-6">
 
-
+        @include('layouts.sessions.success')
+        
         @foreach ($posts as $post)
 
             <div class="max-w-4xl w-full px-10 my-4 py-6 mx-auto bg-white rounded-lg shadow-md">

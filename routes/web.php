@@ -23,24 +23,8 @@ use App\Http\Controllers\ManagmentsController;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::resource('/posts', PostController::class);
-
-// COMMENTS
-
 Route::resource('posts.comments', CommentsController::class)->except('index', 'show', 'create');
-
-// Route::post('/post/{id}/comment', [CommentsController::class, 'store']);
-
-// Route::get('/comments/{id}/edit', [CommentsController::class, 'edit']);
-
-// Route::post('/comments/{id}', [CommentsController::class, 'update']);
-
-// Route::get('/comment/{id}', [CommentsController::class, 'destroy']);
-
-// REGISTER
-
-Route::get('/register', [RegisterController::class, 'create']);
-
-Route::post('/register', [RegisterController::class, 'store']);
+Route::resource('register', RegisterController::class)->only('create', 'store');
 
 // LOGIN
 
