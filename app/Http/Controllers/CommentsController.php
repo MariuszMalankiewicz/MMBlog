@@ -10,6 +10,11 @@ use App\Http\Requests\UpdateCommentRequest;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('check');
+    }
+
     public function store(StoreCommentRequest $request)
     {
         Comment::create([

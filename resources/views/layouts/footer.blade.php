@@ -8,10 +8,10 @@
                 <a class="text-xs md:text-sm text-white hover:underline" href="/">Strona główna</a>
                 @if(Auth::check() && Auth::user()->role === 'admin' || Auth::check() && Auth::user()->role === 'superAdmin') 
                     <span class="text-xs md:text-sm text-gray-500">|</span>
-                    <a class="text-xs md:text-sm text-white hover:underline" href="/posts">Zarządzaj postami</a>
+                    <a class="text-xs md:text-sm text-white hover:underline" href="{{ route('posts.index') }}">Zarządzaj postami</a>
                     @if(Auth::check() && Auth::user()->role === 'superAdmin')
                         <span class="text-xs md:text-sm text-gray-500">|</span>
-                        <a class="text-xs md:text-sm text-white hover:underline" href="/users">Zarządzaj użytkownikami</a>
+                        <a class="text-xs md:text-sm text-white hover:underline" href="{{ route('users.index') }}">Zarządzaj użytkownikami</a>
                     @endif
                 @endif
             </div>

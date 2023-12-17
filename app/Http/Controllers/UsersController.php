@@ -9,6 +9,10 @@ use App\Http\Requests\UpdateUserRequest;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('superAdmin');
+    }
     /**
      * Display a listing of the resource.
      */
