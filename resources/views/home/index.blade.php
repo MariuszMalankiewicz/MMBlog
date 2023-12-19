@@ -5,7 +5,6 @@
     <div class="flex flex-col items-center justify-center w-full px-6">
 
         @include('layouts.sessions.success')
-
         
         @foreach ($posts as $post)
 
@@ -28,6 +27,9 @@
 
         @endforeach
 
+        <div class="mt-5">
+            {{ $posts->links() }}
+        </div>
     </div>
 
 @endsection
